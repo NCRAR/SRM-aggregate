@@ -1,6 +1,8 @@
 from pathlib import Path
 import urllib.request
 
+import pandas as pd
+
 from atom.api import Atom, List, Typed
 from enaml.core.api import Looper
 from enaml.layout.api import align, hbox, spacer, vbox
@@ -31,8 +33,10 @@ class Settings(Atom):
         self.files = sorted(set(self.files + files))
 
     def run_aggregate(self):
-        result, errors = aggregate(self.files)
-        result.to_excel(self.output_file)
+        with pd.ExcelWriter(self.output_file) as fh:
+            result, result_mean, errors = aggregate(self.files)
+            result_mean.to_excel(fh, sheet_name='SRM-mean')
+            result.to_excel(fh, sheet_name='SRM-file-summary')
         return len(result), errors
 
     def save(self):

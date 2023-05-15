@@ -52,4 +52,9 @@ def aggregate(files):
     results = pd.DataFrame(results) \
         .sort_values(['subject', 'visit']) \
         .reset_index(drop=True)
-    return results, errors
+
+    grouping = ['subject', 'visit', 'condition']
+    results_mean = results.groupby(grouping)['averaged_tmr'] \
+        .agg(['mean', 'size']) \
+        .reset_index()
+    return results, results_mean, errors
