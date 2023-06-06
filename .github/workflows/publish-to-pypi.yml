@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/srm-aggregate
+      url: https://pypi.org/p/ncrar-dkm-tools
     permissions:
       id-token: write
     steps:
