@@ -6,7 +6,7 @@ import re
 import pandas as pd
 
 
-p_filename = re.compile(r'PCO(?P<subject>\d{3})_(?P<visit>\d{3})_\d{3}_SR2(?P<condition>\w+)(?P<date>(_\d{2}){6})')
+p_filename = re.compile(r'PCO(?P<subject>\d{3})_(?P<visit>\d{3})_\d{3}_(?P<condition>\w+)(?P<date>(_\d{2}){6})')
 
 
 def parse_filename(filename):
