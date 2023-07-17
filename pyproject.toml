@@ -16,8 +16,12 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.optional-dependencies]
+menu = ["pywin32", "menuinst @ git+https://github.com/conda/menuinst"]
+
 [project.scripts]
 srm-aggregate = "ncrar_dkm_tools.main:main_srm_aggregate"
+ncrar-dkm-tools-make-shortcuts = "ncrar_dkm_tools.main:make_shortcuts"
 
 [build-system]
 requires = ["setuptools>=61.2", "wheel", "setuptools_scm[toml]>=3.4.3"]
