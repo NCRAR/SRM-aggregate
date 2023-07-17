@@ -17,7 +17,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.scripts]
-srm-aggregate = "ncrar_dkm_tools.main:main_aggregate"
+srm-aggregate = "ncrar_dkm_tools.main:main_srm_aggregate"
 
 [build-system]
 requires = ["setuptools>=61.2", "wheel", "setuptools_scm[toml]>=3.4.3"]

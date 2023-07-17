@@ -14,11 +14,11 @@ from enaml.widgets.api import (
 from enaml.qt import QtCore
 STORE = QtCore.QSettings('NCRAR', 'srm-aggregate')
 
-from .list_table import ListTable
+from ..list_table import ListTable
 from .util import aggregate
 
 
-class Settings(Atom):
+class SRMSettings(Atom):
 
     files = List()
     output_file = Typed(Path)
@@ -44,11 +44,11 @@ class Settings(Atom):
         STORE.setValue('output_file', self.output_file)
 
 
-enamldef AggregationWindow(MainWindow):
+enamldef SRMAggregationWindow(MainWindow):
 
     title = 'SRM aggregation'
     initial_size = (800, 400)
-    attr settings = Settings()
+    attr settings = SRMSettings()
 
     MenuBar:
         Menu:
