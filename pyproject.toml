@@ -13,6 +13,7 @@ dependencies = [
     "enaml[qt6-pyside] >=0.16.1",
     "pandas",
 	"xlsxwriter",
+    "openpyxl",
 ]
 dynamic = ["version"]
 
